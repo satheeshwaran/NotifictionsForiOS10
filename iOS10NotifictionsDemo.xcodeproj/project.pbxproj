@@ -14,6 +14,10 @@
 		AB316E3C1D367FC400498078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB316E3A1D367FC400498078 /* LaunchScreen.storyboard */; };
 		AB316E471D367FC500498078 /* iOS10NotifictionsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB316E461D367FC500498078 /* iOS10NotifictionsDemoTests.swift */; };
 		AB316E521D367FC500498078 /* iOS10NotifictionsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB316E511D367FC500498078 /* iOS10NotifictionsDemoUITests.swift */; };
+		AB316E601D36844500498078 /* notification.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB316E5F1D36844500498078 /* notification.jpg */; };
+		AB6728F51D36B5E200AFA9A8 /* notification.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB6728F41D36B5E200AFA9A8 /* notification.mp4 */; };
+		AB6728F71D36B64D00AFA9A8 /* notification.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB6728F61D36B64D00AFA9A8 /* notification.gif */; };
+		AB6728F91D36B7F800AFA9A8 /* notification.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB6728F81D36B7F800AFA9A8 /* notification.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		AB316E4D1D367FC500498078 /* iOS10NotifictionsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS10NotifictionsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB316E511D367FC500498078 /* iOS10NotifictionsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS10NotifictionsDemoUITests.swift; sourceTree = "<group>"; };
 		AB316E531D367FC500498078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB316E5F1D36844500498078 /* notification.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notification.jpg; sourceTree = "<group>"; };
+		AB6728F41D36B5E200AFA9A8 /* notification.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.mp4; sourceTree = "<group>"; };
+		AB6728F61D36B64D00AFA9A8 /* notification.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = notification.gif; sourceTree = "<group>"; };
+		AB6728F81D36B7F800AFA9A8 /* notification.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		AB316E301D367FC400498078 /* iOS10NotifictionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AB316E631D369F2C00498078 /* Resources */,
 				AB316E311D367FC400498078 /* AppDelegate.swift */,
 				AB316E331D367FC400498078 /* ViewController.swift */,
 				AB316E351D367FC400498078 /* Main.storyboard */,
@@ -123,6 +132,17 @@
 				AB316E531D367FC500498078 /* Info.plist */,
 			);
 			path = iOS10NotifictionsDemoUITests;
+			sourceTree = "<group>";
+		};
+		AB316E631D369F2C00498078 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB316E5F1D36844500498078 /* notification.jpg */,
+				AB6728F61D36B64D00AFA9A8 /* notification.gif */,
+				AB6728F41D36B5E200AFA9A8 /* notification.mp4 */,
+				AB6728F81D36B7F800AFA9A8 /* notification.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB316E3C1D367FC400498078 /* LaunchScreen.storyboard in Resources */,
+				AB6728F71D36B64D00AFA9A8 /* notification.gif in Resources */,
+				AB6728F51D36B5E200AFA9A8 /* notification.mp4 in Resources */,
 				AB316E391D367FC400498078 /* Assets.xcassets in Resources */,
 				AB316E371D367FC400498078 /* Main.storyboard in Resources */,
+				AB316E601D36844500498078 /* notification.jpg in Resources */,
+				AB6728F91D36B7F800AFA9A8 /* notification.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +527,7 @@
 				AB316E581D367FC500498078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB316E591D367FC500498078 /* Build configuration list for PBXNativeTarget "iOS10NotifictionsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +536,7 @@
 				AB316E5B1D367FC500498078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB316E5C1D367FC500498078 /* Build configuration list for PBXNativeTarget "iOS10NotifictionsDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +545,7 @@
 				AB316E5E1D367FC500498078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
