@@ -40,7 +40,7 @@ class ViewController: UITableViewController {
         do{
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "jpg")
             
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "customImage_identifier", url:imgURL! , options: nil)
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "jpg_identifier", url:imgURL! , options: nil)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
@@ -51,8 +51,8 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithAudio() {
         do{
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "mp3")
-            
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "customImage_identifier", url:imgURL! , options: nil)
+            let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMP3]
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "audio_identifier", url:imgURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
@@ -63,8 +63,8 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithVideo() {
         do{
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "mp4")
-            
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "customImage_identifier", url:imgURL! , options: nil)
+            let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMPEG4]
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "video_identifier", url:imgURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
@@ -76,7 +76,7 @@ class ViewController: UITableViewController {
         do{
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "gif")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeGIF]
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "customImage_identifier", url:imgURL! , options: notificationOptions)
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "gif_identifier", url:imgURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
