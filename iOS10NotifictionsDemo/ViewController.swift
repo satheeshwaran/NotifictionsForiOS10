@@ -10,6 +10,15 @@ import UIKit
 import UserNotifications
 import MobileCoreServices
 
+/**
+ Enum to define multiple types of notifications in iOS 8
+ 
+ - PlainNotification:     Plain notificaton with subtitle
+ - NotificationWithImage: Notification that contains an image type attachment
+ - NotificationWithGif:   Notification that contains a Gif type attachment
+ - NotificationWithAudio: Notification that contains an Audio type attachment
+ - NotificationWithVideo: Notificaton that contains a Video type attachment
+ */
 enum iOS10NotificationTypes:String {
     case PlainNotification = "Plain Notification in iOS 10 style"
     case NotificationWithImage = "Notification that contains an image type attachment"
@@ -27,6 +36,9 @@ class ViewController: UITableViewController {
         
         self.title = "Select To Send"
         
+        /**
+         Adding all types to the data source array.
+         */
         notificationTypes.append(.PlainNotification)
         notificationTypes.append(.NotificationWithImage)
         notificationTypes.append(.NotificationWithGif)
@@ -36,10 +48,15 @@ class ViewController: UITableViewController {
         
     }
     
+    /**
+     Method to send a notification with an image
+     */
     func sendUILocalNotificationWithImage() {
         do{
+            /// Creating a image URL from bundle
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "jpg")
             
+            /// Creating an attachment object
             let notificationImageAttachment =  try UNNotificationAttachment(identifier: "jpg_identifier", url:imgURL! , options: nil)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
@@ -48,10 +65,16 @@ class ViewController: UITableViewController {
         }
     }
     
+    /**
+     Method to send a notification with audio
+     */
     func sendUILocalNotificationWithAudio() {
         do{
+            /// Creating a audio file URL from bundle
             let imgURL = Bundle.main().urlForResource("notification", withExtension: "mp3")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMP3]
+            
+            /// Creating an attachment object
             let notificationImageAttachment =  try UNNotificationAttachment(identifier: "audio_identifier", url:imgURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
@@ -60,11 +83,17 @@ class ViewController: UITableViewController {
         }
     }
     
+    /**
+     Method to send a notification with Video
+     */
     func sendUILocalNotificationWithVideo() {
         do{
-            let imgURL = Bundle.main().urlForResource("notification", withExtension: "mp4")
+            /// Creating a video file URL from bundle
+            let videoURL = Bundle.main().urlForResource("notification", withExtension: "mp4")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMPEG4]
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "video_identifier", url:imgURL! , options: notificationOptions)
+            
+            /// Creating an attachment object
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "video_identifier", url:videoURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
@@ -72,11 +101,17 @@ class ViewController: UITableViewController {
         }
     }
     
+    /**
+     Method to send a notification with GIF
+     */
     func sendUILocalNotificationWithGif() {
         do{
-            let imgURL = Bundle.main().urlForResource("notification", withExtension: "gif")
+            /// Creating a audio file URL from bundle
+            let gifURL = Bundle.main().urlForResource("notification", withExtension: "gif")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeGIF]
-            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "gif_identifier", url:imgURL! , options: notificationOptions)
+            
+            /// Creating an attachment object
+            let notificationImageAttachment =  try UNNotificationAttachment(identifier: "gif_identifier", url:gifURL! , options: notificationOptions)
             sendUILocalNotificationWithAttachment(notificationAttachment: notificationImageAttachment)
         }
         catch {
@@ -84,21 +119,48 @@ class ViewController: UITableViewController {
         }
     }
     
+    /**
+     Method to send notification with an attachment object
+     
+     - parameter notificationAttachment: a notification attachment object
+     */
     func sendUILocalNotificationWithAttachment(notificationAttachment:UNNotificationAttachment?){
+        
+        /// Creating a UNMutableNotificationContent object that will specify the notification content details
         let content = UNMutableNotificationContent()
+        /**
+         *  Setting the title
+         */
         content.title = "The Code Ninja says"
+        
+        /**
+         *  Setting the body
+         */
         content.body = "The new notifications api in iOS 10 is just awesome"
+        
+        /**
+         *  Setting the subtite, this is new for iOS 10 alone.
+         */
         content.subtitle = "Also you can add a subtitle with it"
         
+        /**
+         *  Setting the attachment object for the notification
+         */
         if notificationAttachment != nil {
             content.attachments = [notificationAttachment!]
         }
         
+        /// Setting the trigger time
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        /// Setting the identifier to identify different types of notifications
         let requestIdentifier = "TheCodeNinja_Identifier"
+        /// Creating a UNNotificationRequest object with the identifier, content and the trigger object
         let request = UNNotificationRequest(identifier: requestIdentifier,
                                             content: content,
                                             trigger: trigger)
+        /**
+         *  Adding the request to UNUserNotificationCenter.current()'s queue so that it presents the notification when the trigger happens.
+         */
         UNUserNotificationCenter.current().add(request) { (error) in
         }
 
