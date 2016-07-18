@@ -54,7 +54,7 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithImage() {
         do{
             /// Creating a image URL from bundle
-            let imgURL = Bundle.main().urlForResource("notification", withExtension: "jpg")
+            let imgURL = Bundle.main.urlForResource("notification", withExtension: "jpg")
             
             /// Creating an attachment object
             let notificationImageAttachment =  try UNNotificationAttachment(identifier: "jpg_identifier", url:imgURL! , options: nil)
@@ -71,7 +71,7 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithAudio() {
         do{
             /// Creating a audio file URL from bundle
-            let imgURL = Bundle.main().urlForResource("notification", withExtension: "mp3")
+            let imgURL = Bundle.main.urlForResource("notification", withExtension: "mp3")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMP3]
             
             /// Creating an attachment object
@@ -89,7 +89,7 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithVideo() {
         do{
             /// Creating a video file URL from bundle
-            let videoURL = Bundle.main().urlForResource("notification", withExtension: "mp4")
+            let videoURL = Bundle.main.urlForResource("notification", withExtension: "mp4")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeMPEG4]
             
             /// Creating an attachment object
@@ -107,7 +107,7 @@ class ViewController: UITableViewController {
     func sendUILocalNotificationWithGif() {
         do{
             /// Creating a audio file URL from bundle
-            let gifURL = Bundle.main().urlForResource("notification", withExtension: "gif")
+            let gifURL = Bundle.main.urlForResource("notification", withExtension: "gif")
             let notificationOptions = [UNNotificationAttachmentOptionsTypeHintKey:kUTTypeGIF]
             
             /// Creating an attachment object
