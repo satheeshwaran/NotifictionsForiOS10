@@ -1,29 +1,30 @@
 # NotifictionsForiOS10
+
 #Demo of the brand new UserNotifications framework introduced in iOS 10
 
-#Permissions API using UserNotifications framework
+### Permissions API using UserNotifications framework
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/permissions.png"/>
 
-iOS 10 style notifications using UserNotifications framework
+### iOS 10 style notifications using UserNotifications framework
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/plainnotification.png"/>
 
-Image Attachment
+### Image Attachment
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/imagenotification.png"/>
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/imagenotificationexpanded"/>
 
-GIF Attachment
+### GIF Attachment
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/gifnotification.png"/>
 
-Audio Attachment
+### Audio Attachment
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/imagenotification.png"/>
 
-Video Attachment
+### Video Attachment
 
 <img src="https://github.com/satheeshwaran/NotifictionsForiOS10/blob/master/Screenshots/videonotification1.png"/>
 
